@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/imagenes">
+        <file>fondoDino.png</file>
+        <file>dino.png</file>
+    </qresource>
+</RCC>
