@@ -21,7 +21,7 @@ public:
 private slots:
     void on_btn_enviar_clicked();
 
-    void on_actionAbout_triggered();
+   // void on_actionAbout_triggered();
 
 
 

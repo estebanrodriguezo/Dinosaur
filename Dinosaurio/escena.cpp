@@ -39,6 +39,7 @@ Escena::Escena(QDialog *parent) :
     scene->addLine(lineizq);
 
     elipse = scene->addEllipse(10,90,20,35);
+    elipse->setBrush(Qt::black);
 //    QPixmap pixmap;
 //    pixmap.load(":/pokebola.png");
 //    pixmap->drawPixmap(boundingRect(),pixmap,pixmap.rect());
@@ -51,12 +52,13 @@ Escena::Escena(QDialog *parent) :
 
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
 
-    timer->start(40);
+    timer->start(60);
 
     count =0;
 
     rect = scene->addRect(200,90,10,20);
-    desp =  6;
+    rect->setBrush(Qt::darkGreen);
+    desp =  5;
     rect->setPos(70,10);
     saltando = false;
 }
@@ -85,7 +87,7 @@ void Escena::actualizar()
 
     if (count == 10){
         saltando = false;
-        elipse->setPos(10,15);
+        elipse->setPos(10,10);
         count = 0;
     }
 
@@ -94,7 +96,8 @@ void Escena::actualizar()
         if(i>=10){
 
             ui->graphicsView->setBackgroundBrush(QBrush(QImage(":/imagenes/gameover1.png")));
-            cout << "Perdiste" << endl;
+            cout << "Game Over" << endl;
+            rect->setBrush(Qt::transparent);
             timer->stop();   }
 
     }
