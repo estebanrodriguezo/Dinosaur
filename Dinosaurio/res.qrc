@@ -2,5 +2,7 @@
     <qresource prefix="/imagenes">
         <file>fondoDino.png</file>
         <file>dino.png</file>
+        <file>fondoDino1.png</file>
+        <file>gameover1.png</file>
     </qresource>
 </RCC>

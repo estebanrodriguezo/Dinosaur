@@ -17,25 +17,6 @@
    <item row="0" column="0">
     <widget class="QGraphicsView" name="graphicsView"/>
    </item>
-   <item row="1" column="0">
-    <widget class="QPushButton" name="btn_reintentar">
-     <property name="text">
-      <string>Reintentar</string>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <property name="autoRepeat">
-      <bool>false</bool>
-     </property>
-     <property name="autoExclusive">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <resources/>

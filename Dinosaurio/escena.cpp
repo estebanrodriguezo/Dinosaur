@@ -5,6 +5,9 @@
 #include<QGraphicsPixmapItem>
 #include <QPixmap>
 #include <QPainter>
+#include<QFont>
+#include<QGraphicsTextItem>
+
 using namespace std;
 
 
@@ -19,9 +22,9 @@ Escena::Escena(QDialog *parent) :
 
     ui->graphicsView->scale(1,-1);
 
-    ui->graphicsView->setBackgroundBrush(QBrush(QImage(":/imagenes/fondoDino.png")));
+    ui->graphicsView->setBackgroundBrush(QBrush(QImage(":/imagenes/fondoDino1.png")));
 
-    scene->setSceneRect(0,-120,400,200);
+    scene->setSceneRect(0,50,300,200);
 
 
 
@@ -35,7 +38,7 @@ Escena::Escena(QDialog *parent) :
     scene->addLine(lineder);
     scene->addLine(lineizq);
 
-    elipse = scene->addEllipse(10,-98,20,20);
+    elipse = scene->addEllipse(10,90,20,35);
 //    QPixmap pixmap;
 //    pixmap.load(":/pokebola.png");
 //    pixmap->drawPixmap(boundingRect(),pixmap,pixmap.rect());
@@ -48,11 +51,11 @@ Escena::Escena(QDialog *parent) :
 
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
 
-    timer->start(50);
+    timer->start(40);
 
     count =0;
 
-    rect = scene->addRect(200,-98,10,20);
+    rect = scene->addRect(200,90,10,20);
     desp =  6;
     rect->setPos(70,10);
     saltando = false;
@@ -82,19 +85,22 @@ void Escena::actualizar()
 
     if (count == 10){
         saltando = false;
-        elipse->setPos(10,10);
+        elipse->setPos(10,15);
         count = 0;
     }
 
     if (rect->collidesWithItem(elipse)) {
         i++;
         if(i>=10){
+
+            ui->graphicsView->setBackgroundBrush(QBrush(QImage(":/imagenes/gameover1.png")));
             cout << "Perdiste" << endl;
             timer->stop();   }
 
     }
 
 }
+
 
 
 
